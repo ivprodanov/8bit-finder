@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+html, body {
+  /* 1. Ensure the background is always black, even when overscrolling */
+  background-color: #000000; 
+  
+  /* 2. Prevent the "rubber-band" bounce effect on mobile and Mac */
+  overscroll-behavior: none; 
+  
+  /* 3. Ensure the body takes up at least the full height of the screen */
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  
+  /* 4. Smooth out pixel art rendering globally */
+  image-rendering: pixelated;
+}
+
+/* Optional: Hide scrollbars for a cleaner 'fullscreen' app look */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ensure the root div is also dark */
+#root {
+  background-color: #000000;
+  min-height: 100vh;
+}
