@@ -77,6 +77,14 @@ export default function Home() {
   path: '/recall',
   color: 'bg-cyan-700',
   hoverColor: 'hover:bg-cyan-600',
+},
+{
+  id: 'hangman',
+  title: 'Gallows Pixel',
+  description: 'Solve the hidden 8-bit word before the pixel man is complete!',
+  path: '/hangman',
+  color: 'bg-red-800',
+  hoverColor: 'hover:bg-red-700',
 }
   ];
 
@@ -111,14 +119,14 @@ export default function Home() {
             <p className="text-xs leading-loose text-slate-100 flex-grow">{game.description}</p>
             
             {/* --- NEW: High Score Display at the bottom of the card --- */}
-            <div className="mt-8 flex justify-between items-end border-t-2 border-white/20 pt-4">
+            {game.id !== "hangman" && <div className="mt-8 flex justify-between items-end border-t-2 border-white/20 pt-4">
               <div className="text-xs text-yellow-300">
                 HI-SCORE: <span className="text-white">{scores[game.id]}</span>
               </div>
               <div className="text-xs text-white opacity-50 group-hover:opacity-100">
                 PLAY NOW {'>'}
               </div>
-            </div>
+            </div>}
           </Link>
         ))}
       </div>
