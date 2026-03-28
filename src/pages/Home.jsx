@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   // --- NEW: State to hold our high scores ---
   const [scores, setScores] = useState({
-  'item-finder': 0, 'train-game': 0, 'snake-game': 0, 'invaders': 0
+  'item-finder': 0, 'train-game': 0, 'snake-game': 0, 'invaders': 0, 'scramble': 0, 'whack-game': 0,'recall-game': 0
 });
 
   // --- NEW: Fetch scores from localStorage when the menu loads ---
@@ -15,6 +15,9 @@ export default function Home() {
       'train-game': parseInt(localStorage.getItem('train-high-score') || '0', 10),
       'snake-game': parseInt(localStorage.getItem('snake-high-score') || '0', 10),
       'invaders': parseInt(localStorage.getItem('invaders-high-score') || '0', 10),
+      'scramble': parseInt(localStorage.getItem('scramble-high-score') || '0', 10),
+      'whack-game': parseInt(localStorage.getItem('whack-high-score') || '0', 10),
+      'recall-game': parseInt(localStorage.getItem('recall-high-score') || '0', 10)
     });
   }, []);
 
@@ -50,6 +53,30 @@ export default function Home() {
   path: '/invaders',
   color: 'bg-blue-600',
   hoverColor: 'hover:bg-blue-500',
+},
+{
+  id: 'scramble',
+  title: 'Word Scramble',
+  description: 'Unscramble retro terms under pressure. Fast typing wins!',
+  path: '/scramble',
+  color: 'bg-pink-600',
+  hoverColor: 'hover:bg-pink-500',
+},
+{
+  id: 'whack-game',
+  title: 'Pixel Puncher',
+  description: 'A classic test of reflexes. Whack the monsters before they hide!',
+  path: '/whack',
+  color: 'bg-orange-600',
+  hoverColor: 'hover:bg-orange-500',
+},
+{
+  id: 'recall-game',
+  title: 'Neural Recall',
+  description: 'Test your photographic memory. How many digits can you hold?',
+  path: '/recall',
+  color: 'bg-cyan-700',
+  hoverColor: 'hover:bg-cyan-600',
 }
   ];
 

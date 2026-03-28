@@ -7,6 +7,9 @@ import ItemFinderGame from './ItemFinder';
 import TrainGame from './TrainGame';
 import SnakeGame from './SnakeGame';
 import SpaceInvadersGame from './SpaceInvadersGame';
+import WordScramble from './WordScramble';
+import WhackAMole from './WhackAMole';
+import NeuralRecall from './NeuralRecall';
 
 export default function App() {
   return (
@@ -19,6 +22,9 @@ export default function App() {
       <Route path="/train-game" element={<TrainGame />} />
       <Route path="/snake-game" element={<SnakeGame />} />
       <Route path="/invaders" element={<SpaceInvadersGame />} />
+      <Route path="/scramble" element={<WordScramble />} />
+      <Route path="/whack" element={<WhackAMole />} />
+      <Route path="/recall" element={<NeuralRecall />} />
     </Routes>
   );
 }
